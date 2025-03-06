@@ -1,0 +1,59 @@
+---
+import './card-portfolio.css';
+const { 
+    title, 
+    descripcion, 
+    imgSrc, 
+    videoSrc,  // Ajout de videoSrc
+    skills, 
+    repoURL, 
+    demoURL, 
+    averageBrightness 
+} = Astro.props;
+---
+
+<div class="card__portfolio">
+    {/* Vérification pour afficher une vidéo si videoSrc existe, sinon une image */}
+    {videoSrc ? (
+        <video
+            src={videoSrc}
+            controls
+            autoPlay
+            loop
+            muted
+            style={{ width: '100%', height: 'auto', borderRadius: '8px' }}
+        />
+    ) : (
+        <img
+            src={imgSrc}
+            alt={title}
+            crossorigin="anonymous"
+            height={130}
+            width={332}
+            loading="lazy"
+            style={{ filter: `brightness(${averageBrightness})` }}
+        />
+    )}
+
+    <div class="descripcion__container">
+        <h2 class="card__title">{title}</h2>
+        <div class="descripcion">
+            <p>{descripcion}</p>
+
+            <div class="skills">
+                {skills.map((skill) => (
+                    <iconify-icon class="iconify" icon={skill} />
+                ))}
+            </div>
+
+            <div class="buttons">
+                <a href={demoURL} target="_blank" rel="noopener noreferrer">
+                    <span>
+                        Demo
+                        <iconify-icon icon="quill:link-out" />
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

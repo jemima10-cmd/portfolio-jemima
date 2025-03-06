@@ -1,0 +1,79 @@
+#skills {
+    display: flex;
+    max-width: calc(var(--max-width) + 2.2rem);
+    padding: 1.1rem;
+    gap: 2.2rem;
+    margin: 4rem auto;
+}
+
+#skills .text-content {
+    max-width: 40%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    gap: 1.1rem;
+    position: relative;
+    top: -90px;
+    left: 360px;
+}
+
+@media screen and (max-width: 768px) {
+    #skills {
+        flex-direction: column-reverse;
+    }
+    #skills .text-content {
+        max-width: 100%;
+    }
+}
+
+
+/* Conteneur du défilement */
+
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 40vw;
+    margin: auto;
+    top: -100px;
+}
+
+
+/* Contenu du défilement (2x les images pour le loop) */
+
+.scroll-content {
+    display: flex;
+    width: max-content;
+    animation: scroll 15s linear infinite;
+}
+
+
+/* Pause l’animation au survol */
+
+.scroll-content:hover {
+    animation-play-state: paused;
+}
+
+
+/* Taille et espacement des images */
+
+.scroll-image {
+    height: 50px;
+    margin: 0 10px;
+}
+
+
+/* Animation pour un effet infini propre */
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+    /* Déplace de toute la largeur */
+}

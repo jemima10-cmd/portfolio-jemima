@@ -1,0 +1,95 @@
+:root {
+    --on-primary: #dcd8fc;
+}
+
+footer {
+    width: 100%;
+    background: rgb(19, 19, 19);
+    display: flex;
+    justify-content: space-between;
+    min-height: 20dvh;
+    color: var(--primary-100);
+    align-items: center;
+    padding: 1rem 4rem;
+    flex-wrap: wrap;
+}
+
+
+/* Centrer la section "jemima" et les icônes à droite */
+
+.footer__container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__link {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    font-size: var(--text-large);
+    margin-top: 0;
+    /* Pas de marges par défaut */
+}
+
+
+/* Modification ici pour la position de l'email */
+
+.footer__links ul {
+    padding: 0;
+    /* Supprime le padding de ul */
+    margin-top: 0;
+    /* Pour s'assurer que l'email n'a pas de marges indésirables */
+}
+
+.footer__link a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    position: relative;
+    /* Positionner l'élément spécifiquement */
+    top: -10px;
+    /* Déplace l'élément vers le haut */
+}
+
+
+/* Style pour l'icône */
+
+.footer__logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    align-self: flex-end;
+}
+
+
+/* Ne pas oublier de centrer l'élément social-icons */
+
+.social-icons {
+    margin-left: auto;
+    align-self: flex-end;
+}
+
+
+/* Style pour l'email */
+
+.jemima1 {
+    font-size: var(--text-title);
+    font-weight: bold;
+    color: #c04dd3;
+}
+
+.image {
+    margin-top: 1%;
+    width: 30px;
+    height: 50px;
+    border-radius: 100%;
+    margin-top: 3%;
+}
+
+.jemfoot {
+    color: #c04dd3;
+    font-weight: bold;
+}

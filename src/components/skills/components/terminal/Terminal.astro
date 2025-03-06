@@ -1,0 +1,13 @@
+---
+import terminal from './terminal.module.css';
+const { nombre } = Astro.props;
+---
+
+<div class={terminal.terminal}>
+	
+	
+		<div class="content">
+			<slot />
+		</div>
+	</div>
+</div>
